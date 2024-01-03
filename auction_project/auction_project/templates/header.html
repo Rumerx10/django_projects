@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/header.css' %}">
+	<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+	<link rel="stylesheet" href="{% static 'css/home.css' %}">
+	<link rel="stylesheet" href="{% static 'css/createBid.css' %}">
+	<link rel="stylesheet" href="{% static 'css/myPostedItems.css' %}">
+</head>
+<body>
+	<header>
+		<div class="header">
+			<a href="#default" class="logo">Divine IT Limited</a>
+			<div class="header-right">
+				<a class="active" href="#">Home</a>
+			  <a href="my_posted_items">My Posted Items</a>
+			  <a href="{% url 'signup' %}">Logout</a>
+			</div>
+		  </div>
+	</header>

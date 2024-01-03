@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="createBidContainer">
+        <h1>Add Product Details</h1>
+        <form action="" method="post" class="createBidForm" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="bidFormFiels">
+                <label for="productName">Product Name:</label>
+                <input type="text" name="productName" required>
+            </div>
+            <div class="bidFormFiels">
+                <label for="productDesc">Product Description:</label>
+                <input type="text" name="productDesc" required>
+            </div>
+            <div class="bidFormFiels">
+                <label for="minimunBidPrice">Minimum Bid Price:</label>
+                <input type="text" name="minimunBidPrice" required>
+            </div>
+            <div class="bidFormFiels">
+                <label for="productImg">Product Image:</label>
+                <input type="file" name="productImg" required>
+            </div>
+            <div class="bidFormFiels">
+                <label for="endDate">End Date:</label>
+                <input type="date" name="endDate" required>
+            </div>
+            <button type="submit" class="applyBtn">Apply</button>
+        </form>
+
+    </div>
+{% endblock %}

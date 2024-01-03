@@ -1,0 +1,46 @@
+.createBidContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 542px;
+    flex-direction: column;
+}
+
+.createBidForm{
+    display: flex;
+    border: none;
+    padding: 40px;
+    row-gap: 20px;
+    flex:0.4;
+    height: 425px;
+    background-color: #888;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #444;
+}
+.bidFormFiels{
+    display: flex;
+    justify-content: center;
+}
+.bidFormFiels label{
+    flex-basis: 45%;
+    padding: 5px 10px;
+}
+.bidFormFiels input{
+    flex-basis: 55%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border:none;
+    outline: none;
+}
+.applyBtn{
+    width: 100px;
+    background: green;
+    padding: 8px 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-left: 40%;
+    margin-top: 10%;
+    cursor:pointer;
+    box-shadow: 3px 3px 5px #555;
+}

@@ -1,12 +1,21 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="itemsContainer">
+{% comment %} <h4>{{userID}}</h4> {% endcomment %}
+    {% if products  %}
+        <div class="bidItems">
+            {% for product in products %}
+                <div class="imgDiv">
+                    <a href="#"><img src="/media/{{product.product_img}}" alt="{{product.product_name}}"></a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h1>No Products </h1>    
+    {% endif %}
+    
+    <a href="create/{{userID}}" type="button" class="createBtn">Create</a>    
+</div>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Home Page</h1>
-</body>
-</html>
+{% endblock %}

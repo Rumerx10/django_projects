@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    {% load static %}
+    <div class="itemListContainer">
+        <h1>My Posted Items</h1>
+        {% if myItems %}
+            <table class="itemListTable">
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th class="descTd">Product Description</th>
+                    <th>Minimum Bid Price</th>
+                    <th>Product Image</th>
+                </tr>
+                {% for item in myItems %}
+                    <tr>
+                        <td class="xyz">{{item.product_id}}</td>
+                        <td>{{item.product_name}}</td>
+                        <td class="descTd">{{item.product_desc}}</td>
+                        <td>{{item.min_bid_price}}</td>
+                        <td class="zyx"><img class="itemImg" src="/media/{{item.product_img}}" alt="{{item.product_name}}"></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        
+        {% endif %}
+    </div>
+{% endblock %}
+
