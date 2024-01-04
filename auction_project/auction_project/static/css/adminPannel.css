@@ -1,0 +1,39 @@
+.nPtPv{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 40px;
+    width: 887px;
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+
+.numProduct, .totalPrice{
+    display: block;
+    height: 300px;
+    width: 300px;
+    background: linear-gradient(358deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #555;
+}
+
+.numProduct div, .totalPrice div{
+    background: linear-gradient(358deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #333;
+    color: white;
+}

@@ -1,0 +1,4 @@
+web gunicron auction_project.wsgi:applicaiton --log-file -
+
+
+

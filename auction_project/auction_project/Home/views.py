@@ -3,6 +3,12 @@ from Signup.models import MyUser
 from .models import ProductDetails,BidderPriceList
 from datetime import datetime
 from django.urls import reverse
+from django.views import generic
+from django.db.models import Max
+from django.db import models
+from django.db.models import OuterRef, QuerySet
+from django.db.models import Subquery,Sum
+
 
 # Create your views here.
 def Home(request,userID):
@@ -12,6 +18,7 @@ def Home(request,userID):
         # Filter the products by status
         products = products.filter(status=True)
     return render(request, 'home.html', {'products': products})
+
 
 def CreateBidForm(request,userID):
     if request.method=="POST":
@@ -39,7 +46,9 @@ def MyPostedItems(request,userID):
 
 def ProductDetail(request, userID, productID):
     item = get_object_or_404(ProductDetails, product_id=productID)
-    context= {'item':item, 'userID':userID}
+    bidList = BidderPriceList.objects.filter(product_id=productID)
+    context= {'item':item, 'userID':userID,'bidList':bidList}
+    
     if request.method=="POST" and item.user_id_id != userID:    
         user = get_object_or_404(MyUser, user_id=userID)   
         product = get_object_or_404(ProductDetails, product_id=productID)
@@ -57,5 +66,33 @@ def ProductDetail(request, userID, productID):
     return render(request, 'productDetail.html', context)
 
 
+class AuctionItem(generic.ListView):
+    # specify the template name
+    template_name = 'auction_item.html'
+    # specify the context object name
+    context_object_name = 'auction_list'
 
+    def get_queryset(self):
+        # filter the ProductDetails table by the status field
+        queryset = ProductDetails.objects.filter(status=False)
+        # create a subquery to get the maximum bidPrice and the corresponding user_id for each product_id
+        subquery = BidderPriceList.objects.filter(product_id=OuterRef('product_id')).order_by('-bidPrice').values('bidPrice', 'user_id')[:1]
+        # annotate the queryset with the subquery results
+        queryset = queryset.annotate(max_bidPrice=Subquery(subquery.values('bidPrice')), max_user_id=Subquery(subquery.values('user_id')))
+        # return the annotated queryset
+        return queryset
 
+def AdminPannel(request):
+    products = ProductDetails.objects.all()
+    for product in products:
+        product.update_status()
+        # Filter the products by status
+        products = products.filter(status=True)
+    num_products = products.count()
+    total_product_value = products.aggregate(Sum('min_bid_price'))['min_bid_price__sum']  
+
+    return render(request, 'adminPannel.html', {
+        'products': products,
+        'num_products':num_products,
+        'total_product_value':total_product_value
+        })

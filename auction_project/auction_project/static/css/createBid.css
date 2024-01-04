@@ -13,7 +13,7 @@
     row-gap: 20px;
     flex:0.4;
     height: 425px;
-    background-color: #888;
+    background: linear-gradient(58deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
     border-radius: 5px;
     box-shadow: 5px 5px 10px #444;
 }
@@ -34,7 +34,7 @@
 }
 .applyBtn{
     width: 100px;
-    background: green;
+    background: linear-gradient(358deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
     padding: 8px 10px;
     border: none;
     color: white;
@@ -42,5 +42,6 @@
     margin-left: 40%;
     margin-top: 10%;
     cursor:pointer;
+    font-weight: bold;
     box-shadow: 3px 3px 5px #555;
 }

@@ -2,16 +2,18 @@
 
 body { 
   margin: 0;
-  background-color: gray;
+  background: linear-gradient(177deg, #FFFF00 0%, #00BCD4 0%, #EBFFFC 100%);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
 }
-
+footer{
+  height: 300px;
+}
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px;
+  background: linear-gradient(58deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
+  padding: 10px 10px;
 }
 
 .header a {
@@ -31,17 +33,23 @@ body {
 }
 
 .header a:hover {
-  background-color: #ddd;
+  background: linear-gradient(58deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
   color: black;
 }
 
-.header a.active {
-  background-color: dodgerblue;
-  color: white;
-}
 
 .header-right {
   float: right;
+}
+
+.pre{
+  text-align: center;
+  color: white;
+  font-size: small;
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid skyblue;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 500px) {

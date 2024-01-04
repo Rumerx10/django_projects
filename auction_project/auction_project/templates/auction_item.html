@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="productDetailContainer"> 
+        <h1>Auction Items</h1>
+        <div class="bidList">
+            {% if auction_list %}
+                <table class="bidPriceListTable">
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product Description</th>
+                        <th>Winner Id</th>
+                        <th>Max Bid Price</th>
+                        <th>Product Image</th>
+                    </tr>
+                    {% for product in auction_list %}
+                        <tr>
+                            <td>{{ product.product_name }}</td>
+                            <td>{{ product.product_desc }}</td>
+                            <td>{{ product.max_user_id }}</td>
+                            <td>{{ product.max_bidPrice }}</td>
+                            <td><img class="auctionItemImg" src="/media/{{product.product_img}}" alt="{{product.product_name}}"></td>
+                        </tr>                        
+                    {% endfor %}
+                    
+                </table>
+            {% endif %}  
+        </div>
+    </div>
+{% endblock content %}
+
+

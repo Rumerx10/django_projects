@@ -1,0 +1,6 @@
+.auctionItemImg{
+    height: 115px;
+    width: 115;
+    object-fit: contain;
+}
+

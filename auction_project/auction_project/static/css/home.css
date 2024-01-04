@@ -2,16 +2,21 @@
     display: flex;
     flex-direction: column;
     position:relative;
+    justify-content: center;
+    align-items: center;
 }
+.homeH1{
+    margin-bottom: 0;
+}
+
 .bidItems{
-    background-color: whitesmoke;
+    background: transparent;
     border-radius: 5px;
-    height: 450px;
+    height: auto;
     margin: 40px 15%;
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow: scroll;
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -21,17 +26,19 @@
     width: 100px;
     top:94%;
     left: 50%;
-    background-color: green;
+    background: linear-gradient(58deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
     text-decoration: none;
     color: white;
     font-weight: bold;
     padding: 6px 10px;
     border-radius: 5px;
     text-align: center;
+    margin-top: 60px;
+    box-shadow: 3px 3px 5px #444;
 
 }
 .imgDiv{
-    background-color: whitesmoke;
+    background: linear-gradient(58deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px #777;

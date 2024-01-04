@@ -1,5 +1,5 @@
 .signup{
-    background-color: #666;
+    background: linear-gradient(177deg, #FFFF00 0%, #00BCD4 0%, #EBFFFC 100%);
     padding: 156px 20px;
     display: flex;
     flex-direction: column;

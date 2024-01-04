@@ -82,6 +82,7 @@
 }
 
 .bidPriceListTable{
-    border: 1px solid gray;
+    border: 1px solid linear-gradient(358deg, #FFFF00 0%, #00D4BD 0%, #268FC5 100%);
     padding: 10px;
+    background-color: whitesmoke;
 }
