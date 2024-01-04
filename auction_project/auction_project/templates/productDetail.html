@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="productDetailContainer">
+    <h1>Product Detail</h1>
+    <div class="detailBox">
+        <div class="contentDivImg">
+            <img class="productImg" src="/media/{{item.product_img}}" alt="{{item.product_name}}">
+        </div>
+        <div class="contentDivDesc">
+            <h2>{{item.product_name}}</h2>
+            <p class="descTitle">Description:</p>
+            <p class="descP">{{item.product_desc}}</p>
+            <p class="descP price">Minimum Bid Price: ${{item.min_bid_price}}</p>
+            <p class="descP endDate">End Date: {{item.end_date}}</p>
+            {% comment %} <p>{{item.user_id_id}} user: {{userID}}</p> {% endcomment %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <input class="bidInput" type="text" name="bidPrice" placeholder="Enter Bid Amount" required>
+                <button class="bidBtn" type="submit">Bid</button>
+            </form>      
+        </div>
+        <div class="bidList">
+            {% if bidList %}
+                <table class="bidPriceListTable">
+                    <tr>
+                        <th>userID</th>
+                        <th>Bid Price</th>
+                    </tr>
+                    {% for item in bidList %}
+                        <tr>
+                            <td>{{item.user_id_id}}</td>
+                            <td>{{item.bidPrice}}</td>
+                        </tr>                        
+                    {% endfor %}
+                    
+                </table>
+            {% endif %}
+
+            
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

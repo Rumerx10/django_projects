@@ -3,7 +3,7 @@ from Signup.models import MyUser
 from django.utils import timezone
 from datetime import datetime
 import pytz
-from django.utils.timezone import is_aware, is_naive, make_naive
+from django.utils.timezone import is_aware, make_naive
 
 # Create your models here.
 class ProductDetails(models.Model):
@@ -37,3 +37,14 @@ class ProductDetails(models.Model):
                 self.status = False
                 # Save the changes
                 self.save()
+
+class BidderPriceList(models.Model):
+    bid_id     = models.AutoField(primary_key=True)
+    user_id    = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    product_id = models.ForeignKey(ProductDetails, on_delete=models.CASCADE)
+    bidPrice   = models.IntegerField()
+
+    def __str__(self):
+        return f"{self.user_id} bid {self.bidPrice} on {self.product_id}"
+
+                    

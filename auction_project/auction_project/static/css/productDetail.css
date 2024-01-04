@@ -1,0 +1,87 @@
+.productDetailContainer{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detailBox{
+    display: flex;
+    justify-content: space-between;
+    flex:1 ;
+    padding: 20px;
+    background-color: white;
+    column-gap: 20px;
+    border-radius: 5px;
+}
+.contentDivImg{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+}
+.contentDivDesc{
+    width: 300px;
+    padding: 20px;
+}
+.productImg{
+    height: 300px;
+    width: 170px;
+    object-fit: contain;
+}
+
+.descTitle{
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.descP{
+    margin: 0;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.price{
+    border: none;
+    background-color: rgb(7, 128, 80);
+    color: whitesmoke;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.endDate{
+    background-color: rgb(218, 22, 22);
+    color: whitesmoke;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+.bidInput{
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    margin-top: 20px;
+    box-shadow: 3px 3px 5px gray;
+    text-align: center;
+}
+.bidBtn{
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    outline: none;
+    margin-bottom: 5px;
+    background-color: #1EA9FE;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    box-shadow: 3px 3px 5px gray;
+    margin-top: 10px;
+}
+
+.bidPriceListTable{
+    border: 1px solid gray;
+    padding: 10px;
+}
