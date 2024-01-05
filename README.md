@@ -1,7 +1,9 @@
 # django_projects
 # Auction Project
 
-**Demonstration Video Link**: (https://www.bing.com/search?form=SKPBOT&q=Demonstration%20Video%20Link)(https://drive.google.com/file/d/1XOTnr09nYyiTs2i0CIZDPObX-HvSy7e0/view?usp=sharing)
+
+<h4>Project Demo Video:</h4>
+[[**Demonstration Video Link**](https://www.bing.com/search?form=SKPBOT&q=Demonstration%20Video%20Link)](https://drive.google.com/file/d/1XOTnr09nYyiTs2i0CIZDPObX-HvSy7e0/view?usp=sharing)
 
 <h3>Some emails and passwords used in this project. How ever you can create your own user account.</h3>
 <h5>
